@@ -10,10 +10,8 @@ def index():
 @app.route('/learn-more')
 def learn_more():
     return render_template('learn-more.html')
+@app.route
 
-@app.route('/get-started')
-def get_started():
-    return render_template('get-started.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
