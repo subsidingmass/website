@@ -10,6 +10,18 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + dbPath
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+class plant(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    commonName = db.Column(db.String(100))
+    scientificName = db.Column(db.String(100))
+    firstNationsName = db.Column(db.String(100))
+    firstNationsUses = db.Column(db.String(100))
+    latitude = db.Column(db.Float)
+    longitude = db.Column(db.Float)
+    KML = db.Column(db.largeBinary)
+    image = db.Column(db.largeBinary)
+
+
 
 
 @app.route('/')
